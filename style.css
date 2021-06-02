@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#painelCadastro {
+    height: 630px;
+}
+#painelCadastro>h2 {
+    color: rgb(186, 240, 237);
+    font-size: 2.4rem;
+    padding: 30px 0px 102px 0px;
+    text-align: center;
+}
+
+button {
+    width: 140px;
+    height: 70px;
+    border-radius: 10px;
+    border: 0;
+    margin: 10px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#cadastroCliente {
+    width: 95vw;
+    max-width: 1100px;
+    height: 374px;
+    position: relative;
+    color: black;
+    background-color: rgb(250, 214, 241);
+    margin: auto;
+    border-radius: 220px 220px 220px 220px;
+}
+#cadastroCliente>h2 {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1.7rem;
+}
+#cadastroCliente>div {
+    padding: 40px 66px 0px 315px;
+}
+#cadastroCliente input {
+    display: block;
+    width: 90vw;
+    max-width: 500px;
+    height: 30px;
+    border-radius: 100px;
+    border: 2px solid black;
+    margin: 10px 0px 10px 0px;
+    outline: none;
+    padding-left: 20px;
+}
+.table {
+    width: 1000px;
+    user-select: none;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0px 15px;
+}
+
