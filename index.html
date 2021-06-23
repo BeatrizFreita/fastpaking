@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,34 +9,34 @@
     <script src="./main.js"></script>
     <title>Página Inicial - Sistema FastPaking</title>
 </head>
+
 <body>
     <!-- Página inicial -->
+    <header id="header">
+        <h2> Sistema FastPaking </h2>
+        <img src="../imagens/logo.png" alt="FastParking" title="FastParking">
+    </header>
+    <section id="cadastroCliente">
+        <h2> Dados Clientes </h2>
+        <div>
+            <form>
+                <label for="nome">Nome</label>
+                <input maxlength="20" id="nome" data-index="" type="text" placeholder="Ex .: Beatriz Freitas" required />
+                <label for="placaCArro">Placa</label>
+                <input id="placaCarro"  maxlength="8" placeholder="Ex .: BIA-2003" type="text" required />
+            </form>
+            <footer>
+                <button> Adicionar </button>
+                <button> Preços </button>
+            </footer>
+        </div>
+    </section>
     <main>
-        <section id="painelCadastro"> 
-            <h2> Sistema FastPaking </h2>
-            <section id="cadastroCliente">
-                <h2> Dados Clientes </h2>
-                <div>
-                    <form>
-                        <label for="nome">Nome</label>
-                        <input maxlength="17" id="nome" data-index="" type="text" placeholder="Ex .: Beatriz Freitas"
-                        required />
-                        <label for="placa">Placa</label>
-                        <input id="placa" pattern="\D{3}-?\d{4}" maxlength="8" placeholder="Ex .: BIA-2003" type="text" required />
-                    </form>
-                    <footer> 
-                        <button> Adicionar </button>
-                        <button> Preços </button>
-                    </footer>
-                </div>
-            </section>
-        </section>
-
-    <!-- Controle dos dados -->
+        <!-- Controle dos dados -->
         <h2> Controle do estacionamento </h2>
-        <table class="table" id="tabelaClientes"\> 
-            <thead> 
-                <tr> 
+        <table class="tabela" id="tabelaClientes">
+            <thead>
+                <tr>
                     <th> Nome </th>
                     <th> Placa </th>
                     <th> Data </th>
@@ -43,26 +44,46 @@
                     <th> Ações </th>
                 </tr>
             </thead>
-            <tbody> 
+            <tbody>
 
             </tbody>
         </table>
-        
+
     </main>
 
     <!-- Preços -->
+    <div class="modal" id="modal-preco">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 id="tituloPreco">Preços</h1>
+                <span class="bnt-fechar" id="fechar">&#10006;</span>
+            </header>
 
-    <div> </div>
+            <form class="form">
+                <label for="hora-preco">Até 1 hora estacionado</label>
+                <input class="input-field" data-index="" type="text" id="umaHoraPreco"
+                    placeholder="Informe o preço de até uma hora" required />
+                <label for="apos-uma-hora"> Após 1 Hora </label>
+                <input class="input-field" type="text" id="precoAteUmaHora" placeholder="Demais horas" required />
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="btnVerde" id="salvarPreco">Salvar</button>
+                <button type="button" class="btnAmarelo" id="cancelar">Cancelar</button>
+            </footer>
+        </div>
+    </div>
 
     <!-- Comprovante -->
-    <div> 
+    <div>
 
 
     </div>
 
     <!-- Final de tudo -->
-    <footer> 
+    <footer>
 
     </footer>
 </body>
+
 </html>

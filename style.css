@@ -6,26 +6,57 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#painelCadastro {
-    height: 630px;
-}
-#painelCadastro>h2 {
-    color: rgb(186, 240, 237);
-    font-size: 2.4rem;
-    padding: 30px 0px 102px 0px;
-    text-align: center;
+        /*Fixos*/
+
+body {
+    font-weight: bold;
+    background-color: #fff;
 }
 
 button {
     width: 140px;
     height: 70px;
-    border-radius: 10px;
+    border-radius: 18px;
     border: 0;
     margin: 10px;
-    color: white;
+    color: #000000;
     font-size: 1.1rem;
     cursor: pointer;
     font-weight: bolder;
+}
+
+
+#header{
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between; 
+    font-size: 1.1em;
+    text-align: center;
+    line-height: 100px;
+    margin: 2.5rem auto;
+}
+
+.tabela {
+    width: 1000px;
+    user-select: none;
+    border-spacing: 0px 15px;
+    text-align: center;
+    user-select:none;
+    border-collapse:separate;
+    margin: 30px auto;
+}                                                                       
+
+main {
+    max-width: 1200px;
+    color: black;
+    margin: 30px auto;
+    border-radius: 120px 120px 0px 0px;
+    background-color: #f3c2eb;
+}
+
+main>h2{
+    margin: 4rem 0px 0px 7rem;
 }
 
 #cadastroCliente {
@@ -34,7 +65,7 @@ button {
     height: 374px;
     position: relative;
     color: black;
-    background-color: rgb(250, 214, 241);
+    background-color: #f3c2eb;
     margin: auto;
     border-radius: 220px 220px 220px 220px;
 }
@@ -57,11 +88,27 @@ button {
     outline: none;
     padding-left: 20px;
 }
-.table {
-    width: 1000px;
+
+        /*Modal*/
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000090;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -10;
+    opacity: 0;
     user-select: none;
-    margin: 20px auto;
-    border-collapse: separate;
-    border-spacing: 0px 15px;
+    transition: all .3s;
+}
+
+.modal-content {
+    width: 50vw;
+    margin: 15vh auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 2px black;
 }
 
