@@ -13,7 +13,7 @@ const openModalPrecos = () => document.querySelector('#modal-preco').classList.a
 const closeModalPrecos = () => document.querySelector('#modal-preco').classList.remove('active');
 
 const openModalReceipt = () => document.querySelector('#modal-comprovante').classList.add('active');
-const closeModalReceipt = () => document.querySelector('modal-comprovante').classList.remove('active');
+const closeModalReceipt = () => document.querySelector('#modal-comprovante').classList.remove('active');
 
 const openModalExit = () => document.querySelector('#modal-saida').classList.add('active');
 const closeModalExit = () => document.querySelector('#modal-saida').classList.remove('active');
@@ -78,8 +78,8 @@ const createRow = (car, index) => {
         <td>${car.hora}</td>
         <td>
             <button data-index="${index}" id="button-receipt" class="button green" type="button">Comp.</button>
-            <button data-index="${index}" id="button-edit" class="button blue" type="button">Editar</button>
-            <button data-index="${index}" id="button-exit" class="button red" type="button">Saída</button>
+            <button data-index="${index}" id="button-edit" class="button pink" type="button">Editar</button>
+            <button data-index="${index}" id="button-exit" class="button pinkred" type="button">Saída</button>
         </td>`;
 
     tabelaClientes.appendChild(newTr);
@@ -282,10 +282,8 @@ document.querySelector('#close-edit').addEventListener('click', () => { closeMod
 document.querySelector('#cancelar-edit').addEventListener('click', () => { closeModalEdit(); clearInputs() });
 
 
-//document.querySelector('#salvar').addEventListener('click', saveCar);
+document.querySelector('#btnSalvar').addEventListener('click', saveCar);
 
-document.querySelector('#btnSalvar')
-    .addEventListener('click', () => {saveClient(); enableButton()})
 
 document.querySelector('#btnPreco')
 .addEventListener('click', () => { openModalPrice(); showModalPrice() })

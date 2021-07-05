@@ -175,13 +175,13 @@ button {
     border-radius: 0 5px 0 0;
 }
 
-.button.red {
+.button.pinkred {
     background-color: #ff00f2;
     border: solid 1px #ff00f2;
 
 }
 
-.button.red:hover{
+.button.pinkred:hover{
     background-color: #fff;
     border: solid 1px #ff4949;
     color: #ff4949;
@@ -197,15 +197,15 @@ button {
     border: solid 1px #13CE66;
     color: #13CE66;
 }
-.button.yellow {
+.button.pink {
     background-color: #f19ce3;
     border: solid 1px #ece8cd;
 }
 
-.button.yellow:hover{
-    background-color: #fff;
-    border: solid 1px #d7db03;
-    color: #d7db03;
+.button.pink:hover{
+    background-color: rgb(247, 11, 196);
+    border: solid 1px #ffffff;
+    color: #ffffff;
 }
 
 .button.blue {
@@ -225,10 +225,13 @@ button {
 
 .form {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     flex-wrap: wrap;
     gap: 20px;
     padding: 0 20px;
+    margin: 10px auto;
+    flex-direction: column;
+    align-items:flex-start;
 }
 
 .form div{

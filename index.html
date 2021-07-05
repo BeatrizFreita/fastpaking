@@ -31,7 +31,7 @@
             </form>
             <footer>
                 <button type="submit" class="button green" id="btnSalvar"> Adicionar </button>
-                <button type="button" class="button yellow" id="btnPreco"> Preços </button>
+                <button type="button" class="button pink" id="btnPreco"> Preços </button>
             </footer>
         </div>
     </section>
@@ -64,17 +64,21 @@
             </header>
 
             <form class="form" id="form-precos">
-                <label for="hora-preco">Até 1 hora estacionado</label>
-                <input class="input-field" data-index="" type="text" id="hora-preco" placeholder="Informe o preço de até uma hora"
-                 required />
-
-                <label for="apos-uma-hora"> Após 1 Hora </label>
-                <input class="input-field" type="text" id="apos-uma-hora" placeholder="Demais horas" required />
+                <div>
+                    <label for="hora-preco">Até 1 hora estacionado</label>
+                    <input class="input-field" data-index="" type="text" id="hora-preco" placeholder="Informe o preço de até uma hora"
+                    required />
+                </div>
+                
+                <div>
+                    <label for="apos-uma-hora"> Após 1 Hora </label>
+                    <input class="input-field" type="text" id="apos-uma-hora" placeholder="Demais horas" required />
+                </div>
             </form>
 
             <footer class="modal-footer">
-                <button type="submit" class="btn-verde" id="salvar-preco">Salvar</button>
-                <button type="button" class="btn-amarelo" id="cancelar-preco">Cancelar</button>
+                <button type="submit" class="button green" id="salvar-preco">Salvar</button>
+                <button type="button" class="button pink" id="cancelar-preco">Cancelar</button>
             </footer>
         </div>
     </div>
@@ -84,30 +88,35 @@
     <div class="modal" id="modal-comprovante">
         <div class="modal-content">
             <header class="modal-header">
-                <h2>Comprovante</h2>
+                <h1>Comprovante</h1>
                 <span class="bnt-fechar" id="fechar-rebibo">&#10006;</span>
             </header>
+            
             <form class="form" id="form-recibo">
                 <div>
                     <label>Nome:</label>
                     <input class="input-readonly" readonly />
                 </div>
+
                 <div>
                     <label>Placa:</label>
                     <input class="input-readonly" readonly />
                 </div>
+
                 <div>
                     <label>Data:</label>
                     <input class="input-readonly" readonly />
                 </div>
+
                 <div>
                     <label>Hora:</label>
                     <input class="input-readonly" readonly />
                 </div>
             </form>
+
             <footer class="modal-footer">
                 <button type="submit" class="button blue" id="imprimir-recibo">Imprimir</button>
-                <button type="button" class="button red" id="cancelar-recibo">Cancelar</button>
+                <button type="button" class="button pinkred" id="cancelar-recibo">Cancelar</button>
             </footer>
         </div>
     </div>
