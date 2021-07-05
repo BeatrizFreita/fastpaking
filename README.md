@@ -2,11 +2,7 @@
     <img src="imagens/logo.png">
 </h1>
 
-<!-- Mostrar apresentação da aplicação -->
 
-<h1>
-    <img src="imagens/logo.png">
-</h1>
 
 <!-- Introduzir o que é o projeto -->
 

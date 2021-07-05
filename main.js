@@ -122,6 +122,37 @@ const savePrecos = () => {
     }
 }
 
+const savePrice = () => {
+
+    const dbPrice = readDBPrice()
+
+    if (isValidFormPrice()) {
+
+        const price = {
+            onehourPrice: document.querySelector('#hora-preco').value,
+            otherHoursPrice: document.querySelector('#apos-uma-hora').value
+        }
+
+        if (dbPrice == '') {
+
+            insertDBPrice(price)
+        } else {
+            dbPrice[0] = price
+            setDBPrice(dbPrice)
+        }
+
+        closeModalPrice()
+    }
+}
+
+const showModalPrice = () => {
+
+    const dbPrice = readDBPrice()
+
+    document.querySelector('#hora-preco').value = dbPrice[0].onehourPrice
+    document.querySelector('#apos-uma-hora').value = dbPrice[0].otherHoursPrice
+}
+
 const isValidFormEdit = () => document.querySelector('#form-editar').reportValidity();
 
 const saveCarEdited = () => {
@@ -147,7 +178,7 @@ const calcExit = (index) => {
     const lastIndex = dbPrecos.length - 1;
 
     const valueOfFirsteHours = dbPrecos[lastIndex]["hora-preco"];
-    const valueOfMoreHours = dbPrecos[lastIndex]["dapos-uma-hora"];
+    const valueOfMoreHours = dbPrecos[lastIndex]["apos-uma-hora"];
 
     const entryTime = dbFastParking[index].hora.substr(0, 2);
     let exitTime = getHoursNow().substr(0, 2);
@@ -288,7 +319,11 @@ document.querySelector('#btnSalvar').addEventListener('click', saveCar);
 document.querySelector('#btnPreco')
 .addEventListener('click', () => { openModalPrice(); showModalPrice() })
 
+document.querySelector('#hora-preco')
+    .addEventListener('keyup', applyMask)
 
+document.querySelector('#apos-uma-hora')
+    .addEventListener('keyup', applyMask)
 
 document.querySelector('#salvar-preco').addEventListener('click', savePrecos);
 
