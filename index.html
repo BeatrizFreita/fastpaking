@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./main.js"></script>
     <title>Página Inicial - Sistema FastPaking</title>
 </head>
 
@@ -19,15 +18,20 @@
     <section id="cadastroCliente">
         <h2> Dados Clientes </h2>
         <div>
-            <form>
-                <label for="nome">Nome</label>
-                <input maxlength="20" id="nome" data-index="" type="text" placeholder="Ex .: Beatriz Freitas" required />
-                <label for="placaCArro">Placa</label>
-                <input id="placaCarro"  maxlength="8" placeholder="Ex .: BIA-2003" type="text" required />
+            <form class="form" id="form-register">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input maxlength="20" id="nome" data-index="" type="text" placeholder="Ex .: Beatriz Freitas" required />
+                </div>
+                
+                <div>
+                    <label for="placaCArro">Placa</label>
+                    <input id="placaCarro"  maxlength="8" placeholder="Ex .: BIA-2003" type="text" required />
+                </div>
             </form>
             <footer>
-                <button> Adicionar </button>
-                <button> Preços </button>
+                <button type="submit" class="button green" id="btnSalvar"> Adicionar </button>
+                <button type="button" class="button yellow" id="btnPreco"> Preços </button>
             </footer>
         </div>
     </section>
@@ -56,34 +60,131 @@
         <div class="modal-content">
             <header class="modal-header">
                 <h1 id="tituloPreco">Preços</h1>
-                <span class="bnt-fechar" id="fechar">&#10006;</span>
+                <span class="bnt-fechar" id="fechar-preco">&#10006;</span>
             </header>
 
-            <form class="form">
+            <form class="form" id="form-precos">
                 <label for="hora-preco">Até 1 hora estacionado</label>
-                <input class="input-field" data-index="" type="text" id="umaHoraPreco"
-                    placeholder="Informe o preço de até uma hora" required />
+                <input class="input-field" data-index="" type="text" id="hora-preco" placeholder="Informe o preço de até uma hora"
+                 required />
+
                 <label for="apos-uma-hora"> Após 1 Hora </label>
-                <input class="input-field" type="text" id="precoAteUmaHora" placeholder="Demais horas" required />
+                <input class="input-field" type="text" id="apos-uma-hora" placeholder="Demais horas" required />
             </form>
 
             <footer class="modal-footer">
-                <button type="submit" class="btnVerde" id="salvarPreco">Salvar</button>
-                <button type="button" class="btnAmarelo" id="cancelar">Cancelar</button>
+                <button type="submit" class="btn-verde" id="salvar-preco">Salvar</button>
+                <button type="button" class="btn-amarelo" id="cancelar-preco">Cancelar</button>
             </footer>
         </div>
     </div>
 
     <!-- Comprovante -->
-    <div>
 
+    <div class="modal" id="modal-comprovante">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Comprovante</h2>
+                <span class="bnt-fechar" id="fechar-rebibo">&#10006;</span>
+            </header>
+            <form class="form" id="form-recibo">
+                <div>
+                    <label>Nome:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Placa:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Data:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Hora:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+            </form>
+            <footer class="modal-footer">
+                <button type="submit" class="button blue" id="imprimir-recibo">Imprimir</button>
+                <button type="button" class="button red" id="cancelar-recibo">Cancelar</button>
+            </footer>
+        </div>
+    </div>
 
+    <!-- Editar dados -->
+    <div class="modal" id="modal-editar">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1>Editar</h1>
+                <span class="bnt-fechar" id="close-edit">&#10006;</span>
+            </header>
+            <form class="form" id="form-editar">
+                <div>
+                    <label for="nome-edited">Nome</label>
+                    <input type="text" class="input-form" id="nome-edited" required />
+                </div>
+                <div>
+                    <label for="editar-placa">Placa</label>
+                    <input type="text" class="input-form" id="editar-placa" required />
+                </div>
+                <div>
+                    <label for="data">Data</label>
+                    <input type="text" class="input-readonly" id="data" readonly />
+                </div>
+                <div>
+                    <label for="hora">Hora de Entrada</label>
+                    <input type="text" class="input-readonly" id="hora" readonly />
+                </div>
+            </form>
+            <footer class="modal-footer">
+                <button type="submit" class="button green" id="editar-salvar">Salvar</button>
+                <button type="button" class="button red" id="cancelar-edit">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Comprovante de saida -->
+    <div class="modal" id="modal-saida">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1>Comprovante de Saída</h1>
+                <span class="bnt-fechar" id="close-exit">&#10006;</span>
+            </header>
+            <form class="form" id="form-saida">
+                <div>
+                    <label>Nome:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Placa:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Entrada:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Saída:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+            </form>
+            <footer class="modal-footer">
+                <button type="submit" class="button blue" id="imprimir-saida">Imprimir</button>
+                <button type="button" class="button red" id="cancelar-exit">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="containerSlogan">
     </div>
 
     <!-- Final de tudo -->
     <footer>
 
     </footer>
+    <script src="./main.js"></script>
+
 </body>
 
 </html>
